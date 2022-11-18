@@ -79,10 +79,23 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="obn-7M-fVv">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vos-xR-qeq">
+                                <rect key="frame" x="93.5" y="76" width="227" height="32"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satelitte"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentBtn:" destination="QfB-2R-xEf" eventType="valueChanged" id="dj7-rJ-kMg"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mfk-Vw-Tc7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vos-xR-qeq" firstAttribute="top" secondItem="mfk-Vw-Tc7" secondAttribute="top" constant="32" id="6bO-qw-Ynu"/>
+                            <constraint firstItem="vos-xR-qeq" firstAttribute="centerX" secondItem="A2u-Ma-rju" secondAttribute="centerX" id="E8f-uc-a67"/>
                             <constraint firstItem="obn-7M-fVv" firstAttribute="top" secondItem="A2u-Ma-rju" secondAttribute="top" id="FSy-Hq-KwX"/>
                             <constraint firstItem="obn-7M-fVv" firstAttribute="trailing" secondItem="mfk-Vw-Tc7" secondAttribute="trailing" id="ZWE-b0-4Wc"/>
                             <constraint firstItem="obn-7M-fVv" firstAttribute="bottom" secondItem="mfk-Vw-Tc7" secondAttribute="bottom" id="puq-uw-OtI"/>
@@ -92,6 +105,7 @@
                     <tabBarItem key="tabBarItem" title="Map" id="0dS-wT-JIc"/>
                     <connections>
                         <outlet property="map" destination="obn-7M-fVv" id="lf3-VO-SpC"/>
+                        <outlet property="segment" destination="vos-xR-qeq" id="tn2-B1-tgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmL-0n-kEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

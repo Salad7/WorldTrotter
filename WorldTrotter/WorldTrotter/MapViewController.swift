@@ -6,9 +6,28 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
 
+    @IBAction func segmentBtn(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("Selected Index 0")
+            map.mapType = .standard
+        case 1:
+            print("Selected Index 1")
+            map.mapType = .hybrid
+
+        case 2:
+            print("Selected Index 2")
+            map.mapType = .satellite
+
+        default:
+            print("oppa")
+        }
+    }
+    @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var map: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
